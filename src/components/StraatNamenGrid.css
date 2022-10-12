@@ -1,0 +1,25 @@
+.container {
+  margin: 50px 100px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.grid-item {
+  display: inline-grid;
+  margin: 10px;
+}
+
+.card {
+  width: 350px;
+  height: 150px;
+  margin: 10px;
+  background-image: url("/public/nl.jpg");
+  background-size: cover;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
