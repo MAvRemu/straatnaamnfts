@@ -8,21 +8,18 @@ import {
 } from "react-router-dom";
 
 const straatNamen = [
-  "Nieboerweg",
-  "Sportlaan",
-  "Laan van Meerdervoort",
-  "Grote Markt",
-  "Bosjes van Poot",
-  "Nieboerweg",
-  "Sportlaan",
-  "Laan van Meerdervoort",
-  "Grote Markt",
-  "Bosjes van Poot",
-  "Nieboerweg",
-  "Sportlaan",
-  "Laan van Meerdervoort",
-  "Grote Markt",
-  "Bosjes van Poot",
+  {name: "Nieboerweg", key: 1},
+  {name: "Sportlaan", key: 2},
+  {name: "Laan van Meerdervoort", key: 3},
+  {name: "Grote Markt", key: 4},
+  {name: "Nieboerweg", key: 5},
+  {name: "Sportlaan", key: 6},
+  {name: "Laan van Meerdervoort", key: 7},
+  {name: "Grote Markt", key: 8},
+  {name: "Nieboerweg", key: 9},
+  {name: "Sportlaan", key: 10},
+  {name: "Laan van Meerdervoort", key: 11},
+  {name: "Grote Markt", key: 12},
 ];
 
 const router = createBrowserRouter([
