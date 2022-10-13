@@ -1,21 +1,21 @@
 import "./NavBar.css";
 import { NavLink } from "react-router-dom";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { showcart } from "../store/cartSlice";
 
 const NavBar = () => {
-  const cartCount = useSelector((state) => state.cart.value);
+  const cartCount = useSelector((state) => state.cart.cart.length);
+  const dispatch = useDispatch();
 
   return (
     <div className="navbar">
       <NavLink to="/home" className="navitem" end>
         Home
       </NavLink>
-      <NavLink to="/cart" className="navitem" end>
-        Cart ({cartCount})
-      </NavLink>
+      <h1 onClick={() => dispatch(showcart()) } className="navitem"> Cart ({cartCount}) </h1>
       <NavLink to="/login" className="navitem" end>
-        Login
+        Connect
       </NavLink>
     </div>
   );

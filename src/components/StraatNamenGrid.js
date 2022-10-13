@@ -6,11 +6,13 @@ import { addelement } from "../store/cartSlice"
 
 const StraatNamenGrid = (props) => {
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart.cart);
+  const cart = useSelector((state) => state.cart);
 
   const addToCartHandler = (event) => {
-    console.log(event);
-    dispatch(addelement());
+    dispatch(addelement(+event.target.id));
+  };
+
+  const showCartHandler = () => {
     console.log(cart);
   };
 
@@ -18,14 +20,17 @@ const StraatNamenGrid = (props) => {
     <div className="container">
       <div className="grid-container">
         {props.straatNamen.map((straatname) => (
+          <div className="card-outer">
           <div className="card grid-item" key={straatname.key}>
             <StraatNaamBord>{straatname.name}</StraatNaamBord>
-            <h3 onClick={addToCartHandler} id={straatname.key}>
+          </div>
+            { straatname.available ? <h3 onClick={addToCartHandler} id={straatname.key} className="card-btn">
               Add to cart
-            </h3>
+            </h3> : <h3 className="card-btn btn-grey"> unavailable </h3>}
           </div>
         ))}
       </div>
+      <button onClick={showCartHandler}>show cart</button>
     </div>
   );
 };
