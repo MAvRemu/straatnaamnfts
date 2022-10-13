@@ -1,8 +1,7 @@
 import StraatNaamBord from "../components/StraatNaamBord";
 import "./StraatNamenGrid.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addelement } from "../store/cartSlice"
-
+import { addelement } from "../store/cartSlice";
 
 const StraatNamenGrid = (props) => {
   const dispatch = useDispatch();
@@ -20,13 +19,21 @@ const StraatNamenGrid = (props) => {
     <div className="container">
       <div className="grid-container">
         {props.straatNamen.map((straatname) => (
-          <div className="card-outer">
-          <div className="card grid-item" key={straatname.key}>
-            <StraatNaamBord>{straatname.name}</StraatNaamBord>
-          </div>
-            { straatname.available ? <h3 onClick={addToCartHandler} id={straatname.key} className="card-btn">
-              Add to cart
-            </h3> : <h3 className="card-btn btn-grey"> unavailable </h3>}
+          <div className="card-outer" key={straatname.key}>
+            <div className="card grid-item">
+              <StraatNaamBord>{straatname.name}</StraatNaamBord>
+            </div>
+            {straatname.available ? (
+              <h3
+                onClick={addToCartHandler}
+                id={straatname.key}
+                className="card-btn"
+              >
+                Add to cart
+              </h3>
+            ) : (
+              <h3 className="card-btn btn-grey"> unavailable </h3>
+            )}
           </div>
         ))}
       </div>
