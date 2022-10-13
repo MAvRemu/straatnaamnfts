@@ -1,5 +1,5 @@
 .container {
-  margin: 50px 100px;
+  margin: 0px 100px;
 }
 
 .grid-container {
@@ -47,4 +47,10 @@
 
 .btn-grey {
   background-color: rgb(166, 166, 166);
+}
+
+.grid-upper-line {
+  background-color: rgb(166, 166, 166);
+  width: 100%;
+  height: 2px;
 }

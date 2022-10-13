@@ -17,6 +17,7 @@ const StraatNamenGrid = (props) => {
 
   return (
     <div className="container">
+      <div className="grid-upper-line"></div>
       <div className="grid-container">
         {props.straatNamen.map((straatname) => (
           <div className="card-outer" key={straatname.key}>
@@ -32,7 +33,7 @@ const StraatNamenGrid = (props) => {
                 Add to cart
               </h3>
             ) : (
-              <h3 className="card-btn btn-grey"> unavailable </h3>
+              <h3 className="card-btn btn-grey"> sold </h3>
             )}
           </div>
         ))}

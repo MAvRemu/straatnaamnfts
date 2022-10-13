@@ -4,19 +4,28 @@ import StraatNamenGrid from "../components/StraatNamenGrid";
 import { useSelector } from "react-redux";
 import CartModal from "../components/CartModal";
 import Filter from "../components/Filter";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Home = (props) => {
   const showCart = useSelector((state) => state.cart.showcart);
-  const [straatNamen, setStraatNamen] = useState(props.straatNamen)
+  const inventory = useSelector((state) => state.cart.inventory);
+  const [straatNamen, setStraatNamen] = useState(inventory);
+
+  useEffect(() => {
+    setStraatNamen(inventory);
+  }, [inventory]);
 
   const filterHandler = (payload) => {
     if (payload === "available") {
-      setStraatNamen(straatNamen.filter(
-        (straatnaam) => straatnaam.available === true
-      ));
+      setStraatNamen(
+        inventory.filter((straatnaam) => straatnaam.available === true)
+      );
+    } else if (payload === "sold") {
+      setStraatNamen(
+        inventory.filter((straatnaam) => straatnaam.available === false)
+      );
     } else {
-      setStraatNamen(props.straatNamen)
+      setStraatNamen(inventory);
     }
   };
 

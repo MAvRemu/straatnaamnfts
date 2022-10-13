@@ -1,0 +1,19 @@
+.filter {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-item {
+  border-style: none;
+  background-color: rgb(166, 166, 166);
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  min-width: 100px;
+}
+
+.main-color {
+  background-color: #ff9b00;
+}
