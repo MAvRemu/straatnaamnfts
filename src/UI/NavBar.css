@@ -12,7 +12,11 @@ body {
 
 .img-cart {
   height: 22px;
+  width: 22px;
   margin: 3px;
+  background-image: url("/public/cart.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .flex {
