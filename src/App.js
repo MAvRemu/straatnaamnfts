@@ -9,15 +9,15 @@ import { useEffect } from "react";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/straatnaamnfts",
     element: <Navigate to="home" replace />,
   },
   {
-    path: "home",
+    path: "/straatnaamnfts/home",
     element: <Home />,
   },
   {
-    path: "login",
+    path: "/straatnaamnfts/login",
     element: <Home />,
   },
 ]);

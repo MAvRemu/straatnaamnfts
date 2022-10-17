@@ -6,7 +6,7 @@
 
 .filter-item {
   border-style: none;
-  background-color: rgb(166, 166, 166);
+  background-color: var(--gray);
   margin: 5px;
   padding: 10px;
   border-radius: 5px;

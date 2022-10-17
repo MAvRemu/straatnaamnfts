@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { showcart } from "../store/cartSlice";
 import { setAccounts } from "../store/walletSlice";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const NavBar = () => {
   const cartCount = useSelector((state) => state.cart.cart.length);
@@ -28,9 +29,12 @@ const NavBar = () => {
       <NavLink to="/home" className="navitem" end>
         Home
       </NavLink>
+      <div className="flex">
+      <img src="/cart.png" className="img-cart"></img>
       <h1 onClick={() => dispatch(showcart())} className="navitem">
         Cart ({cartCount})
       </h1>
+      </div>
       {storeAccounts ? (
         <h1 className="navbtn" onClick={handleDisconnectWallet}>
           {storeAccounts[0].slice(0, 5) +

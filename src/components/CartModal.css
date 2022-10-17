@@ -42,10 +42,10 @@
 
 .btn {
   border-style: none;
-  background-color: rgb(17, 205, 17);
+  background-color: var(--active);
   padding: 10px;
 }
 
 .danger {
-  background-color: red;
+  background-color: var(--danger);
 }

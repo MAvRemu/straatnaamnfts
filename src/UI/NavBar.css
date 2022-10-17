@@ -5,8 +5,18 @@ body {
 .navbar {
   display: flex;
   justify-content: space-around;
-  background-color: #ff9b00;
+  background-color: var(--main);
   margin: 0;
+  align-items: center;
+}
+
+.img-cart {
+  height: 22px;
+  margin: 3px;
+}
+
+.flex {
+  display: flex;
   align-items: center;
 }
 
@@ -15,15 +25,18 @@ body {
 }
 
 .navitem {
-  margin: 10px;
+  margin-top: 6px;
+  margin-bottom: 6px;
   font-size: 25px;
   color: black;
   text-decoration: none;
+  font-size: 20px;
 }
 
 .navbtn {
-  margin: 10px;
-  font-size: 25px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 20px;
   color: black;
   text-decoration: none;
   border: black;
