@@ -5,7 +5,7 @@ import { addelement } from "../store/cartSlice";
 
 const StraatNamenGrid = (props) => {
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector((state) => state);
 
   const addToCartHandler = (event) => {
     dispatch(addelement(+event.target.id));
