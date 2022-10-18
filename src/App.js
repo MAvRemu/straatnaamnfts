@@ -27,10 +27,9 @@ function App() {
   fetchStraatNamen();
 
   useEffect(() => {
-    console.log("useEffect is running");
-    console.log(window.ethereum.isMetaMask);
 
-    if (window.ethereum !== "undefined") {
+    if (!!window.ethereum) {
+
       window.ethereum.on("accountsChanged", (accounts) => {
         console.log("accounts changed: ", accounts[0]);
       });
@@ -39,7 +38,7 @@ function App() {
         console.log(chainId);
       });
     } else {
-      console.log("please install the MetaMask extension");
+      alert("please install the MetaMask extension in order to use this website")
     }
   }, []);
 
