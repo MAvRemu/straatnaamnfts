@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/straatnaamnfts/static/css/main.02184993.css",
-    "main.js": "/straatnaamnfts/static/js/main.66f579b3.js",
+    "main.js": "/straatnaamnfts/static/js/main.32a041c5.js",
     "static/media/nl.jpg": "/straatnaamnfts/static/media/nl.66f6a588190761760758.jpg",
     "static/media/cart.png": "/straatnaamnfts/static/media/cart.4ac19b3268ce1d9b6131.png",
     "index.html": "/straatnaamnfts/index.html",
     "main.02184993.css.map": "/straatnaamnfts/static/css/main.02184993.css.map",
-    "main.66f579b3.js.map": "/straatnaamnfts/static/js/main.66f579b3.js.map"
+    "main.32a041c5.js.map": "/straatnaamnfts/static/js/main.32a041c5.js.map"
   },
   "entrypoints": [
     "static/css/main.02184993.css",
-    "static/js/main.66f579b3.js"
+    "static/js/main.32a041c5.js"
   ]
 }
