@@ -1,0 +1,10 @@
+.added-to-cart {
+  background-color: lightgreen;
+  height: 80px;
+  padding: 10px;
+  line-height: 80px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 10px;
+}

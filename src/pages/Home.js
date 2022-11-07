@@ -4,12 +4,14 @@ import StraatNamenGrid from "../components/StraatNamenGrid";
 import { useSelector } from "react-redux";
 import CartModal from "../components/CartModal";
 import Filter from "../components/Filter";
+import AddedToCartBanner from "../components/AddedToCartBanner";
 import { useEffect, useState } from "react";
 
 const Home = (props) => {
   const showCart = useSelector((state) => state.cart.showcart);
   const inventory = useSelector((state) => state.cart.inventory);
   const [straatNamen, setStraatNamen] = useState(inventory);
+  const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
     setStraatNamen(inventory);
@@ -35,7 +37,11 @@ const Home = (props) => {
       <NavBar />
       <Banner />
       <Filter filter={filterHandler}></Filter>
-      <StraatNamenGrid straatNamen={straatNamen}></StraatNamenGrid>
+      <StraatNamenGrid
+        straatNamen={straatNamen}
+        setShowBanner={setShowBanner}
+      ></StraatNamenGrid>
+      {showBanner && <AddedToCartBanner />}
     </>
   );
 };

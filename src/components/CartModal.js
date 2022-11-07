@@ -1,6 +1,6 @@
 import "./CartModal.css";
 import { useDispatch, useSelector } from "react-redux";
-import { showcart } from "../store/cartSlice";
+import { showcart, removeelement } from "../store/cartSlice";
 
 const CartModal = () => {
   const dispatch = useDispatch();
@@ -10,6 +10,11 @@ const CartModal = () => {
 
   const purchaseHandler = () => {
     console.log("purchasing....");
+  };
+
+  const removeItemHandler = (item) => {
+    console.log(item);
+    dispatch(removeelement(item));
   };
 
   return (
@@ -22,21 +27,22 @@ const CartModal = () => {
         <h1 className="rm-margin">Your Cart</h1>
         {cart.cart.map((item) => (
           <div key={item} className="cart-line">
-            <h3>{inventory[item]["name"]}</h3> <h4>40 xrd</h4>
+            <h3>{inventory[item]["name"]}</h3>
+            <h4 className="push">40 xrd</h4>
+            <button className="btn-remove" onClick={() => removeItemHandler(item)}> -</button>
           </div>
         ))}
         <div className="hz-line"></div>
         <div className="cart-line">
-          <h3>total</h3> <h4>{cart.cart.length * 40} xrd</h4>
+          <h3>Total</h3> <h4 className="push">{cart.cart.length * 40} xrd</h4>
+          <button className="hide"> -</button>
         </div>
         <div className="btn-cart-line">
           <button className="btn danger" onClick={() => dispatch(showcart())}>
-            {" "}
-            Cancel{" "}
+            Cancel
           </button>
           <button className="btn" onClick={purchaseHandler}>
-            {" "}
-            Purchase{" "}
+            Purchase
           </button>
         </div>
       </div>

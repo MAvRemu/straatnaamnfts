@@ -38,7 +38,7 @@ function App() {
         console.log(chainId);
       });
     } else {
-      alert("please install the MetaMask extension in order to use this website")
+      console.log("please install the MetaMask extension in order to use this website");
     }
   }, []);
 

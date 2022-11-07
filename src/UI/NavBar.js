@@ -12,11 +12,15 @@ const NavBar = () => {
   const dispatch = useDispatch();
 
   const handleConnectWallet = async () => {
+
+    if (!!window.ethereum) {
     const accounts = await window.ethereum.request({
       method: "eth_requestAccounts",
     });
     dispatch(setAccounts(accounts));
-    console.log("store accounts are: ", storeAccounts);
+  } else {
+    alert("please install the MetaMask extension in order to use this website")
+  }
   };
 
   const handleDisconnectWallet = async () => {

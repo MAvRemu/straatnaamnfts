@@ -9,6 +9,8 @@ const StraatNamenGrid = (props) => {
 
   const addToCartHandler = (event) => {
     dispatch(addelement(+event.target.id));
+    props.setShowBanner(true);
+    setTimeout(() => props.setShowBanner(false), 2000)
   };
 
   const showCartHandler = () => {

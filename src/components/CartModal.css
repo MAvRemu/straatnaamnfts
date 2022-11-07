@@ -20,18 +20,32 @@
 
 .cart-line {
   display: flex;
-  width: 300px;
-  justify-content: space-between;
+  width: 400px;
 }
 
-.cart-line>h3, .cart-line>h4, .rm-margin {
+.cart-line>h3, .rm-margin, .cart-line>h5 {
   margin: 4px;
 }
 
 .hz-line {
   background-color: black;
-  width: 100%;
+  width: 94%;
   height: 3px;
+}
+
+.btn-remove{
+  margin: 2px;
+  border-style: none;
+  padding: 0 8px 0 8px ;
+}
+
+.push {
+  margin: 4px;
+  margin-left: auto;
+}
+
+.hide {
+  visibility: hidden;
 }
 
 .btn-cart-line {
