@@ -42,7 +42,7 @@ const NavBar = () => {
         <h1 className="navbtn" onClick={handleDisconnectWallet}>
           {storeAccounts[0].slice(0, 5) +
             "....." +
-            storeAccounts[0].slice(-5)}{" "}
+            storeAccounts[0].slice(-5)}
         </h1>
       ) : (
         <h1 onClick={handleConnectWallet} className="navbtn">
