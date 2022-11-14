@@ -8,14 +8,20 @@ const straatNamen = [
   { name: "Sportlaan", key: 2, available: true },
   { name: "Laan van Meerdervoort", key: 3, available: false },
   { name: "Grote Markt", key: 4, available: true },
-  { name: "Nieboerweg", key: 5, available: false },
-  { name: "Sportlaan", key: 6, available: true },
-  { name: "Laan van Meerdervoort", key: 7, available: true },
-  { name: "Grote Markt", key: 8, available: false },
-  { name: "Nieboerweg", key: 9, available: true },
-  { name: "Sportlaan", key: 10, available: true },
-  { name: "Laan van Meerdervoort", key: 11, available: true },
-  { name: "Grote Markt", key: 12, available: false },
+  { name: "Denneweg", key: 5, available: false },
+  { name: "De Lange Poten", key: 6, available: true },
+  { name: "Het Plein", key: 7, available: true },
+  { name: "Klaverstraat", key: 8, available: false },
+  { name: "Scheveningseweg", key: 9, available: true },
+  { name: "Ohmstraat", key: 10, available: true },
+  { name: "Loosduinsekade", key: 11, available: true },
+  { name: "Ommetje", key: 12, available: false },
+  { name: "Weimarstraat", key: 13, available: true },
+  { name: "Amsterdamsestraat", key: 14, available: true },
+  { name: "Duinstraat", key: 15, available: false },
+  { name: "Koningsplein", key: 16, available: true },
+  { name: "Bierkade", key: 17, available: true },
+  { name: "Fietskade", key: 18, available: false },
 ];
 
 
@@ -49,7 +55,7 @@ const useHttp = () => {
 
       const data = await response.json();
 
-      const tData = data["-NEGZSCdlE9wu0wdo72B"];
+      const tData = data["-NGqZ3ToH6FW5HnKSTie"];
       const loadedMovies = [];
 
       for (const key in tData) {
