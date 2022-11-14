@@ -9,8 +9,10 @@ const Filter = (props) => {
     } else if (event.target.textContent === "Sold") {
       props.filter("sold");
       setFilterAll("sold")
-    }
-    else {
+    } else if (event.target.textContent === "Your Cart") {
+      props.filter("cart");
+      setFilterAll("cart")
+    } else {
       props.filter("all");
       setFilterAll("all")
     }
@@ -22,6 +24,7 @@ const Filter = (props) => {
     <div className="filter">
       <button onClick={filterHandler} className={`filter-item '+ ${ filterAll === "all" ? ' main-color': ' '}`}>All</button>
       <button onClick={filterHandler} className={`filter-item '+ ${ filterAll === "available" ? ' main-color': ' '}`}>Available</button>
+      <button onClick={filterHandler} className={`filter-item '+ ${ filterAll === "cart" ? ' main-color': ' '}`}>Your Cart</button>
       <button onClick={filterHandler} className={`filter-item '+ ${ filterAll === "sold" ? ' main-color': ' '}`}>Sold</button>
     </div>
   );

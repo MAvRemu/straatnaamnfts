@@ -34,21 +34,18 @@ const StraatNamenGrid = (props) => {
                   id={straatname.key}
                   className="card-btn"
                 >
-                  Add to cart
+                  Add To Cart
                 </h3>
               )}
 
             {!straatname.available &&
               !cart.cart.includes(parseInt(straatname.key)) && (
-                <h3 className="card-btn btn-grey"> sold </h3>
+                <h3 className="card-btn btn-grey"> Sold </h3>
               )}
-
-            {console.log(cart.cart)}
-            {console.log(typeof straatname.key)}
             {cart.cart.includes(parseInt(straatname.key)) && (
-              <div className="flex card-btn btn-grey justify-content">
+              <div className="flex card-btn justify-content">
                 <div className="img-cart nomargin" alt="cart-img"></div>
-                <h3 className="margin-left">In your cart</h3>
+                <h3 className="margin-left">In Cart</h3>
               </div>
             )}
           </div>

@@ -8,10 +8,12 @@ import AddedToCartBanner from "../components/AddedToCartBanner";
 import { useEffect, useState } from "react";
 
 const Home = (props) => {
-  const showCart = useSelector((state) => state.cart.showcart);
+  const cart = useSelector((state) => state.cart);
   const inventory = useSelector((state) => state.cart.inventory);
   const [straatNamen, setStraatNamen] = useState(inventory);
   const [showBanner, setShowBanner] = useState(false);
+
+  console.log(cart.cart);
 
   useEffect(() => {
     setStraatNamen(inventory);
@@ -26,6 +28,10 @@ const Home = (props) => {
       setStraatNamen(
         inventory.filter((straatnaam) => straatnaam.available === false)
       );
+    } else if (payload === "cart") {
+      setStraatNamen(
+        inventory.filter((straatnaam) => cart.cart.includes(parseInt(straatnaam.key)))
+      );
     } else {
       setStraatNamen(inventory);
     }
@@ -33,7 +39,7 @@ const Home = (props) => {
 
   return (
     <>
-      {showCart && <CartModal />}
+      {cart.showcart && <CartModal />}
       <NavBar />
       <Banner />
       <Filter filter={filterHandler}></Filter>
