@@ -12,15 +12,16 @@ const NavBar = () => {
   const dispatch = useDispatch();
 
   const handleConnectWallet = async () => {
-
     if (!!window.ethereum) {
-    const accounts = await window.ethereum.request({
-      method: "eth_requestAccounts",
-    });
-    dispatch(setAccounts(accounts));
-  } else {
-    alert("please install the MetaMask extension in order to use this website")
-  }
+      const accounts = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      dispatch(setAccounts(accounts));
+    } else {
+      alert(
+        "please install the MetaMask extension in order to use this website"
+      );
+    }
   };
 
   const handleDisconnectWallet = async () => {
@@ -33,16 +34,14 @@ const NavBar = () => {
         Home
       </NavLink>
       <div className="flex">
-      <div className="img-cart" alt="cart-img"></div>
-      <h1 onClick={() => dispatch(showcart())} className="navitem">
-        Cart ({cartCount})
-      </h1>
+        <div className="img-cart" alt="cart-img"></div>
+        <h1 onClick={() => dispatch(showcart())} className="navitem">
+          Cart ({cartCount})
+        </h1>
       </div>
       {storeAccounts ? (
         <h1 className="navbtn" onClick={handleDisconnectWallet}>
-          {storeAccounts[0].slice(0, 5) +
-            "....." +
-            storeAccounts[0].slice(-5)}
+          {storeAccounts[0].slice(0, 5) + "....." + storeAccounts[0].slice(-5)}
         </h1>
       ) : (
         <h1 onClick={handleConnectWallet} className="navbtn">
