@@ -12,8 +12,7 @@ const Home = (props) => {
   const inventory = useSelector((state) => state.cart.inventory);
   const [straatNamen, setStraatNamen] = useState(inventory);
   const [showBanner, setShowBanner] = useState(false);
-
-  console.log(cart.cart);
+  const [bannerText, setBannerText] = useState("nada");
 
   useEffect(() => {
     setStraatNamen(inventory);
@@ -30,7 +29,9 @@ const Home = (props) => {
       );
     } else if (payload === "cart") {
       setStraatNamen(
-        inventory.filter((straatnaam) => cart.cart.includes(parseInt(straatnaam.key)))
+        inventory.filter((straatnaam) =>
+          cart.cart.includes(parseInt(straatnaam.key))
+        )
       );
     } else {
       setStraatNamen(inventory);
@@ -40,14 +41,15 @@ const Home = (props) => {
   return (
     <>
       {cart.showcart && <CartModal />}
-      <NavBar />
+      <NavBar setShowBanner={setShowBanner} setBannerText={setBannerText} />
       <Banner />
       <Filter filter={filterHandler}></Filter>
       <StraatNamenGrid
         straatNamen={straatNamen}
         setShowBanner={setShowBanner}
+        setBannerText={setBannerText}
       ></StraatNamenGrid>
-      {showBanner && <AddedToCartBanner />}
+      {showBanner && <AddedToCartBanner>{bannerText}</AddedToCartBanner>}
     </>
   );
 };

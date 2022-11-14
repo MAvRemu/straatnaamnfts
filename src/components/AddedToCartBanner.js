@@ -1,8 +1,8 @@
 import "./AddedToCartBanner.css"
 
-const AddedToCartBanner = () => {
+const AddedToCartBanner = (props) => {
 
-  return <div className="added-to-cart"> Successfully added to Cart</div>
+  return <div className="added-to-cart"> {props.children}</div>
 }
 
 export default AddedToCartBanner

@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { showcart } from "../store/cartSlice";
 import { setAccounts } from "../store/walletSlice";
 
-const NavBar = () => {
+const NavBar = (props) => {
   const cartCount = useSelector((state) => state.cart.cart.length);
   const storeAccounts = useSelector((state) => state.wallet.accounts);
 
@@ -17,6 +17,10 @@ const NavBar = () => {
         method: "eth_requestAccounts",
       });
       dispatch(setAccounts(accounts));
+      props.setShowBanner(true);
+      props.setBannerText("Wallet Connected");
+      setTimeout(() => props.setShowBanner(false), 2000);
+
     } else {
       alert(
         "please install the MetaMask extension in order to use this website"

@@ -7,9 +7,10 @@ const StraatNamenGrid = (props) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
 
-  const addToCartHandler = (event) => {
+  const addToCartHandler = (event, string) => {
     dispatch(addelement(+event.target.id));
     props.setShowBanner(true);
+    props.setBannerText(string);
     setTimeout(() => props.setShowBanner(false), 2000);
   };
 
@@ -30,7 +31,7 @@ const StraatNamenGrid = (props) => {
             {straatname.available &&
               !cart.cart.includes(parseInt(straatname.key)) && (
                 <h3
-                  onClick={addToCartHandler}
+                  onClick={(event) => addToCartHandler(event, "Added to Cart")}
                   id={straatname.key}
                   className="card-btn"
                 >
